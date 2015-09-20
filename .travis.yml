@@ -1,0 +1,8 @@
+script: bash ./deploy.sh
+language: node_js
+node_js:
+  - '0.12'
+env:
+  global:
+  - GH_REF: github.com/mushishi78/static-react-blog.git
+  - secure: fRFqh6ZS4yQ2fGJfr6l2qnukr1Axp4Qkp2kSsOgx3oZl25KKDJMCc11OIslUARWPRyfQDUkSteNTlrbZqKcJGmPRnIdGMSlrKTi1lcm2RfYI/Y0PCagZYzKBqzz8lGX5jx/b52HErD/tDf3t46zkNVJJbCYx4DRDg5JMPbSK/Kl9gsfWBesC5/32Dj5F38cmizFJz3GyETZwpgVDWbvwz/DKEu1I5owRRmRR/0ltoLjb+Rk2/bnmU3AEKuL53tDYqdddyzt6XwFTSmU+Ujzsm0XEI6Kb3TR9yeNSr7UkhF//ji+NiOS2CxMB3Sa1+hLaDahXShJ7zD0U8OaX3v/ZI4Yrfi8Y+kueymEXC8uSFotcG640hyjtH0GiZJsyOQBFlJ4XpeLDFI1Krvr+hbq45ovcpkb3pkw2Exgq6Jjhe7A1oJbp7KOIYyGfIfxjDLK+xupZyIQRm5rFfmpsMFYtSTl95lt4SBnoOqMH8+//4mKDbO/xyU382AiYTUomSF8zoKyUyqLvAVD9jgmYmWgGEx/Zkks57MRQd2rlut7ZBvGzuQsAffbKrr67chQwk8e6MT6V8hm/ppFGLPZoW8U5Jvdo2eD7TU1h4rI7pQsAOS/zOHmNZdiCWd1P5lrYLB3PmJOrVS71umpxjPGIfSK81ZP9jHsabBlbwQbzPEqLLio=
