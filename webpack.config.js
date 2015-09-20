@@ -11,7 +11,12 @@ module.exports = {
     'client': './client.js',
     'static': './static.js'
   },
-  output: { path: './public', libraryTarget: 'umd', filename: '[name].js' },
+  output: {
+    path: './public',
+    libraryTarget: 'umd',
+    filename: '[name].js',
+    publicPath: '/static-react-blog'
+  },
   module: {
     loaders: [
       { test: /\.jsx?$/, loader: 'babel' },
