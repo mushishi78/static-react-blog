@@ -3,8 +3,8 @@ site.baseurl = site.baseurl || '';
 
 const toPath = file => file.replace(/\.\/.*?\//, '/').replace(/\..*$/, '');
 const reduceFn = (obj, file) => {
-  const path = toPath(file);
-  return { ...obj, [path]: { ...require(file), path } };
+  file = { path: toPath(file), ...require(file) };
+  return { ...obj, [file.path]: file };
 };
 
 const pages = require.context('.', true, /\/pages\//).keys().reduce(reduceFn, {});

@@ -7,9 +7,8 @@ var posts  = fs.readdirSync(__dirname + '/data/posts').map(filenameToRoute);
 var routes = [
   '/',
   '/about',
-  '/posts',
-  { path: '/404', output: '/404.html' },
-  { path: '/feed', output: '/feed.xml' }
+  { path: '/404.html', output: '/404.html' },
+  { path: '/feed.xml', output: '/feed.xml' }
 ].concat(posts);
 
 module.exports = {

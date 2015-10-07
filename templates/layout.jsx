@@ -21,6 +21,6 @@ export default ({ children, path }) =>
   </html>
 
 function title(path) {
-  return  pages[path] ? ' | ' +  pages[path].title :
-          posts[path] ? ' | ' +  posts[path].title : '';
+  return pages[path] ? ' | ' +  pages[path].title :
+         posts[path] ? ' | ' +  posts[path].title : '';
 }

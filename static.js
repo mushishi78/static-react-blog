@@ -5,5 +5,9 @@ import feed from './templates/feed';
 import './css';
 
 export default function(path, props, callback) {
-  callback(path === '/feed' ? feed : '<!doctype html>' + renderToString(<App path={path} />));
+  if(path === '/feed.xml') {
+    callback(feed);
+  } else {
+    callback('<!doctype html>' + renderToString(<App path={path} />));
+  }
 }
