@@ -8,8 +8,8 @@ var routes = [
   '/',
   '/about',
   '/posts',
-  { path: '/404',  output: '/404.html' },
-  { path: '/feed',  output: '/feed.xml' }
+  { path: '/404', output: '/404.html' },
+  { path: '/feed', output: '/feed.xml' }
 ].concat(posts);
 
 module.exports = {
