@@ -12,7 +12,7 @@
     "markdown-with-front-matter-loader": "^0.1.0",
     "react": "^0.14.0-rc1",
     "react-dom": "^0.14.0-rc1",
-    "static-site-generator-webpack-plugin": "^1.1.2",
+    "static-render-webpack-plugin": "^0.1.2",
     "style-loader": "^0.12.4",
     "webpack": "^1.11.0",
     "webpack-dev-server": "^1.10.1",

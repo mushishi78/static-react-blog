@@ -1,10 +1,16 @@
 var webpack = require('webpack');
-var StaticSiteGeneratorPlugin = require('static-site-generator-webpack-plugin');
+var StaticSiteGeneratorPlugin = require('static-render-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var fs = require('fs');
 
-var posts = fs.readdirSync(__dirname + '/posts').map(filenameToRoute);
-var routes = ['/', '/about'].concat(posts);
+var posts  = fs.readdirSync(__dirname + '/data/posts').map(filenameToRoute);
+var routes = [
+  '/',
+  '/about',
+  '/posts',
+  { path: '/404',  output: '/404.html' },
+  { path: '/feed',  output: '/feed.xml' }
+].concat(posts);
 
 module.exports = {
   entry: {

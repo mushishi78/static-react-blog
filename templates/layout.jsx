@@ -1,7 +1,6 @@
 import React from 'react';
-import posts from '../posts';
+import { pages, posts, site } from '../data';
 import Header from './header.jsx';
-import site from '../config.yml';
 
 export default ({ children, path }) =>
   <html>
@@ -11,16 +10,17 @@ export default ({ children, path }) =>
       <meta name='viewport' content='width=device-width, initial-scale=1.0' />
       <meta name='description' content={site.description} />
       <link rel='canonical' href={site.url + site.baseurl + path} />
-      <title>{'Static React Blog' + title(path)}</title>
+      <title>{site.name + title(path)}</title>
       <link href={site.baseurl + '/styles.css'} rel='stylesheet' type='text/css' />
     </head>
     <body>
       <Header />
-      { children }
+      {children}
       <script src={site.baseurl + '/client.js'} />
     </body>
   </html>
 
 function title(path) {
-  return posts[path] ? ' | ' + posts[path].title : '';
+  return  pages[path] ? ' | ' +  pages[path].title :
+          posts[path] ? ' | ' +  posts[path].title : '';
 }

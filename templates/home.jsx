@@ -1,28 +1,17 @@
 import React from 'react';
-import posts from '../posts';
-import site from '../config.yml';
-
-const postsValues = Object.keys(posts).map(path => posts[path]);
+import { site, posts } from '../data';
+import { prettyDate, values, summary } from '../utils';
 
 export default () =>
-  <main>
-    {
-      postsValues.map(post =>
-        <a href={site.baseurl + post.path} key={post.path} style={styles.a}>
-          <h2>{post.title}</h2>
-          <span>{post.author}</span> <time>{new Date(post.date).toDateString()}</time>
-          <p>{stripHTML(post.__content).substring(0, 300)}...</p>
-        </a>
-      )
-    }
-  </main>
+  <main>{
+    values(posts).reverse().map(post =>
+      <a href={site.baseurl + post.path} key={post.path}>
+        <h2>{post.title}</h2>
+        <span>{post.author} </span>
+        <time>{prettyDate(post.date)}</time>
+        <p dangerouslySetInnerHTML={{ __html: summary(post) }} />
+      </a>
+    )
+  }</main>
 
-function stripHTML(html) {
-  return html.replace(/<(?:.|\n)*?>/gm, '');
-}
 
-const styles = {
-  a: {
-    color: '#333'
-  }
-}

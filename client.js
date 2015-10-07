@@ -2,7 +2,7 @@ import React from 'react';
 import addressbar from 'addressbar';
 import { render } from 'react-dom';
 import App from './templates/app.jsx';
-import site from './config.yml';
+import { site } from './data';
 import './css';
 
 class Router extends React.Component {
@@ -18,6 +18,7 @@ class Router extends React.Component {
     path = normalize(path);
     addressbar.value = site.baseurl + path;
     this.setState({ path });
+    window.scrollTo(0, 0);
   }
   render() {
     return <App path={this.state.path} />;
