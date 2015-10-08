@@ -11,7 +11,7 @@ function toFilename(path) {
 }
 
 function renderPath(path) {
-	return '<!doctype html>' + renderToString(<App path={path} />);
+  return '<!doctype html>' + renderToString(<App path={path} />);
 }
 
 export default function(render, done) {
