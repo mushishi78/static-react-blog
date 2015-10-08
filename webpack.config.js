@@ -1,15 +1,6 @@
 var webpack = require('webpack');
-var StaticSiteGeneratorPlugin = require('static-render-webpack-plugin');
+var StaticWebpackPlugin = require('static-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var fs = require('fs');
-
-var posts  = fs.readdirSync(__dirname + '/data/posts').map(filenameToRoute);
-var routes = [
-  '/',
-  '/about',
-  { path: '/404.html', output: '/404.html' },
-  { path: '/feed.xml', output: '/feed.xml' }
-].concat(posts);
 
 module.exports = {
   entry: {
@@ -34,10 +25,6 @@ module.exports = {
   plugins: [
     new webpack.optimize.UglifyJsPlugin({ minimize: true }),
     new ExtractTextPlugin('styles.css'),
-    new StaticSiteGeneratorPlugin('static.js', routes)
+    new StaticWebpackPlugin('static.js')
   ]
 };
-
-function filenameToRoute(filename) {
-  return '/' + filename.replace(/\..*$/, '');
-}
