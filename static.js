@@ -10,10 +10,12 @@ function toFilename(path) {
   return path.replace(/^(\\|\/)+/, '');
 }
 
-const renderPath = path => '<!doctype html>' + renderToString(<App path={path} />);
+function renderPath(path) {
+	return '<!doctype html>' + renderToString(<App path={path} />);
+}
 
 export default function(render, done) {
-  render({ path: 'feed.xml', contents: feed });
-  routes.forEach(route => render({ path: toFilename(route), contents: renderPath(route) }))
+  render('feed.xml', feed);
+  routes.forEach(route => render(toFilename(route), renderPath(route)));
   done();
 }
