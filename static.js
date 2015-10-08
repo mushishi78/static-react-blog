@@ -14,6 +14,6 @@ const renderPath = path => '<!doctype html>' + renderToString(<App path={path} /
 
 export default function(render, done) {
   render({ path: 'feed.xml', contents: feed });
-  routes.forEach(route =>	render({ path: toFilename(route),	contents: renderPath(route) }))
+  routes.forEach(route => render({ path: toFilename(route), contents: renderPath(route) }))
   done();
 }
